@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <ng-container *ngIf="false">
+    <h1 class="task-header">Task 2</h1>
+    <hr/>
+    <div class="task-body">
+      <div *ngFor="let arr of kristArray" class="main-item">
+        <div *ngFor="let el of arr" [ngClass]="{'item': el === '*', 'empty-item': el === ''}">
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="false">
+    <h1 class="task-header">Task 2</h1>
+    <hr/>
+    <div class="task-body">
+      <div *ngFor="let arr2 of sandTimeArray" class="main-item">
+        <div *ngFor="let el of arr2" [ngClass]="{'item': el === '*', 'empty-item': el === ''}">
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container >
+    <h1 class="task-header">Task 2</h1>
+    <hr/>
+    <div class="task-body">
+      <div *ngFor="let arr of snakeArray" class="main-item">
+        <div
+          *ngFor="let el of arr"
+          [ngClass]="{
+          'item': el === '*',
+          'empty-item': el === '',
+          'snake-head': el === '@',
+          }"
+        >
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+</div>
+
+

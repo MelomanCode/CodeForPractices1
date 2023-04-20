@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row pt-20">
+    <div *ngFor="let hero of heroList" class="col center-col">
+      <hero-character
+        [title]="hero.title"
+        [description]="hero.description"
+        [imageLink]="hero.imageLink"
+      ></hero-character>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="row" style="height: 80px; padding: 20px">
+  <div class="col">
+    <input class="form-control" type="number" [(ngModel)]="firstCount" min="0">
+  </div>
+
+  <div class="col" *ngIf="isShowMark">
+    <span class="mark-span"><b>{{sign}}</b></span>
+  </div>
+
+  <div class="col">
+    <input class="form-control" type="number" [(ngModel)]="secondCount" min="0">
+  </div>
+  <div class="col">
+    <select class="form-select" [(ngModel)]="selection">
+      <option *ngFor="let item of selectionsList" [ngValue]="item">
+        {{item}}
+      </option>
+    </select>
+  </div>
+  <div class="col">
+    <button type="button" class="btn btn-dark" (click)="consider()">Consider</button>
+  </div>
+  <div class="col">
+    <span><b>{{result}}</b></span>
+  </div>
+</div>
+
+<hr />
+
+<result-table [resultArray]="resultArray"></result-table>

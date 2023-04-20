@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">First count</th>
+    <th scope="col">Second count</th>
+    <th scope="col">SelectionValue</th>
+    <th scope="col">Result</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of resultArray; index as i">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{item.firstCount}}</td>
+    <td>{{item.secondCount}}</td>
+    <td>{{item.selection}}</td>
+    <td>{{item.result}}</td>
+  </tr>
+  <tr>
+  </tbody>
+</table>
+<button class="btn btn-danger" (click)="clearLocalStorage()">Delete All</button>

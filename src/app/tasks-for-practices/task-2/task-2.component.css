@@ -1,0 +1,41 @@
+.task-header {
+  display: flex;
+  justify-content: center;
+}
+
+.task-body {
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 15px 15px black;
+  padding: 15px;
+}
+
+.item {
+  background-color: #d00b0b;
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+}
+
+.main-item:active {
+  margin: 40px 0 40px 0;
+  transition-duration: 500ms;
+
+}
+
+.empty-item {
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+}
+
+.main-item {
+  display: flex;
+}
+
+.snake-head {
+  background-color: #002ba1;
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+}

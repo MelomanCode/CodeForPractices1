@@ -1,0 +1,11 @@
+.card-img-top {
+  height: 400px;
+}
+
+.card-body {
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
