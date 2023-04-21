@@ -39,3 +39,15 @@
   height: 20px;
   margin: 2px;
 }
+.snake-eat {
+  background-color: #0cbd07;
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+}
+.snake-body {
+  background-color: #071fbd;
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+}
