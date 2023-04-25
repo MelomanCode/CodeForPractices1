@@ -6,11 +6,13 @@ import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {Task1Component} from "./task-1/task-1.component";
 import {Task2Component} from "./task-2/task-2.component";
+import {Task3Component} from "./task-3/task-3.component";
 
 @NgModule({
   declarations: [
     Task1Component,
-    Task2Component
+    Task2Component,
+    Task3Component
   ],
   imports: [
     BrowserModule,

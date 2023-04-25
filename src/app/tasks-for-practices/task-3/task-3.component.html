@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <ng-container>
+    <label class="form-label">Введите пятизначное число</label>
+    <input
+      type="number"
+      class="form-control"
+      style="width: 250px"
+      (keyup.enter)="submitData(+data.value)"
+      #data
+    >
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Number</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of numArray; index as i">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{item}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </ng-container>
+</div>
+
+
