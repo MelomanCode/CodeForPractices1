@@ -10,3 +10,11 @@
   box-shadow: 0 15px 15px rgb(12, 2, 2);
   padding: 15px;
 }
+.ai {
+  color: #fdc302;
+  background-color: black;
+}
+.user {
+  color: #10c749;
+  background-color: black;
+}

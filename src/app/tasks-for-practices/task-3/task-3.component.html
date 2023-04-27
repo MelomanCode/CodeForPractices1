@@ -1,28 +1,103 @@
 <div class="container-fluid">
-  <ng-container>
-    <label class="form-label">Введите пятизначное число</label>
-    <input
-      type="number"
-      class="form-control"
-      style="width: 250px"
-      (keyup.enter)="submitData(+data.value)"
-      #data
-    >
+  <ng-container *ngIf="false">
+    <h1 class="task-header">Task 3.1</h1>
+    <hr />
+    <div class="task-body">
+      <div>
+        <ng-container>
+          <label class="form-label">Введите число в секундах</label>
+          <input
+            type="number"
+            class="form-control"
+            style="width: 250px"
+            (keyup.enter)="submitData(+data.value)"
+            #data
+          >
 
-    <table class="table">
-      <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Number</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let item of numArray; index as i">
-        <th scope="row">{{i + 1}}</th>
-        <td>{{item}}</td>
-      </tr>
-      </tbody>
-    </table>
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Number</th>
+            </tr>
+            </thead>
+            <tbody>
+<!--            <tr *ngFor="let item of numArray; index as i">-->
+<!--              <th scope="row">{{i + 1}}</th>-->
+<!--              <td>{{item}}</td>-->
+<!--            </tr>-->
+            </tbody>
+          </table>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="false">
+    <h1 class="task-header">Task 3.2</h1>
+    <hr />
+    <div class="task-body">
+      <div>
+        <ng-container>
+          <label class="form-label">Введите число</label>
+          <input
+            type="number"
+            class="form-control"
+            style="width: 250px"
+            (keyup.enter)="submitData2(+data.value)"
+            #data
+          >
+
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Number</th>
+            </tr>
+            </thead>
+            <tbody>
+<!--            <tr *ngFor="let item of numArray; index as i">-->
+<!--              <th scope="row">{{i + 1}}</th>-->
+<!--              <td>{{item}}</td>-->
+<!--            </tr>-->
+            </tbody>
+          </table>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container>
+    <h1 class="task-header">Task 3.3 ChatGPD2000</h1>
+    <hr />
+    <div class="task-body">
+      <div>
+        <ng-container>
+          <textarea
+            class="form-control"
+            (keyup.enter)="chatGPT2000()"
+            [(ngModel)]="text"
+          ></textarea>
+          <label>Введите сообщение</label>
+
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">Chat</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of textArray">
+              <td [ngClass]="{
+              'ai': item.person === 'ai',
+              'user': item.person === 'user'
+              }">{{item.text}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </ng-container>
+      </div>
+    </div>
   </ng-container>
 </div>
 
