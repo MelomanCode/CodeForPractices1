@@ -25,6 +25,10 @@
     <h1 class="task-header">Task 2.2</h1>
     <hr/>
     <div class="task-body">
+      <div class="mb-3 form-check">
+        <input [(ngModel)]="gameMode" type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Game Mode</label>
+      </div>
       <div *ngFor="let arr of mapArray" class="main-item">
         <div
           *ngFor="let el of arr"

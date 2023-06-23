@@ -1,5 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 
+
+
 interface ICord {
   height: number;
   width: number;
@@ -16,16 +18,16 @@ export class Task2Component implements OnInit {
 
 
 
-
+  gameMode: boolean = false
 
   mapArray: string[][] = [[]]
   mapHeight: number = 20;
-  mapWidth: number = 35;
+  mapWidth: number = 40;
   renderIntervalMS: number = 100;
   startSnakeBodyLength: number = 2;
   snakeBodyArray: ICord[] = []
   move: string = 'Up'
-  snakeHeadPosition: ICord = {height: 20, width: 30}
+  snakeHeadPosition: ICord = {height: 14, width: 20}
   snakeEatPosition: ICord = {
     height: this.getRandomInt(1, this.mapHeight - 1), width: this.getRandomInt(1, this.mapWidth - 1)
   }
@@ -40,6 +42,7 @@ export class Task2Component implements OnInit {
     // this.trainingCode()
     this.initSnakeBody();
 
+
     setInterval(() => {
       this.moveControl();
       this.eatAction();
@@ -50,6 +53,17 @@ export class Task2Component implements OnInit {
       this.renderYLine();
     }, this.renderIntervalMS)
 
+  }
+
+  setDefault() {
+    this.snakeHeadPosition = {height: 14, width: 20};
+    this.startSnakeBodyLength = 2;
+    this.snakeEatPosition = {
+      height: this.getRandomInt(1, this.mapHeight - 1), width: this.getRandomInt(1, this.mapWidth - 1)
+    }
+    this.move = 'Up'
+    this.snakeBodyArray = [];
+    this.initSnakeBody();
   }
 
   eatAction(): void {
@@ -202,21 +216,55 @@ export class Task2Component implements OnInit {
 
   private moveControl() {
     if (this.move === 'Up') {
-      this.snakeHeadPosition.height -= 1
+      if (this.snakeHeadPosition.height === 1) {
+        if (this.gameMode) {
+          this.setDefault();
+        } else {
+          this.snakeHeadPosition.height = this.mapHeight - 2
+        }
+      } else {
+        this.snakeHeadPosition.height -= 1
+      }
     }
 
     if (this.move === 'Down') {
-      this.snakeHeadPosition.height += 1
+      if (this.snakeHeadPosition.height === this.mapHeight - 2) {
+        if (this.gameMode) {
+          this.setDefault();
+        } else {
+          this.snakeHeadPosition.height = 1
+        }
+      } else {
+        this.snakeHeadPosition.height += 1
+      }
     }
 
     if (this.move === 'Left') {
-      this.snakeHeadPosition.width -= 1
+      if (this.snakeHeadPosition.width === 1) {
+        if (this.gameMode) {
+          this.setDefault();
+        } else {
+          this.snakeHeadPosition.width = this.mapWidth - 2
+        }
+      } else {
+        this.snakeHeadPosition.width -= 1
+      }
     }
 
     if (this.move === 'Right') {
-      this.snakeHeadPosition.width += 1
+      if (this.snakeHeadPosition.width === this.mapWidth - 2) {
+        if (this.gameMode) {
+          this.setDefault();
+        } else {
+          this.snakeHeadPosition.width = 1
+        }
+      }else {
+        this.snakeHeadPosition.width += 1
+      }
     }
   }
+
+
 
 
 

@@ -23,6 +23,7 @@ export class Task3Component implements OnInit {
   selectedMystery: { answer: string, ask: string } | null = null
   firstMystery: boolean = true;
 
+  name: string = 'Vasya'
 
 
   submitData(second: number) {
@@ -131,9 +132,6 @@ export class Task3Component implements OnInit {
     this.textArray.push({person: 'ai', text: 'Хотите еще загадку?'})
   }
 
-
-
-
   chatGPT2000() {
     if (this.text === '') {
       return
@@ -154,44 +152,66 @@ export class Task3Component implements OnInit {
     }
 
     if (myText === 'привет') {
-      this.textArray.push({person: 'ai', text: 'Приветствую вас господин'});
+      this.textArray.push({person: 'ai', text: 'Приветствую вас!'});
     } else if (myText === 'задай мне загадку' || myText === 'хочу загадку' || myText === 'загадай загадку') {
       this.textArray.push({person: 'ai', text: 'Да, конечно! Вот вам загадка:'});
       this.isMysteryMode = true;
       this.mysteryMode();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      else if (myText === 'как дела?' || myText === 'как настроение?') {
+      this.textArray.push({person: 'ai', text: 'Отлично, сегодня прекрасный день!'});
+    }
     else {
       this.textArray.push({person: 'ai', text: 'Не понимаю вас'});
     }
     this.text = ''
   }
 
-
-
-
-
-
-
-
-
-
-
+  name1() {
+    console.log(this.name)
+  }
+  name2(trig: boolean = false) {
+     const name3 = () => {
+      this.name = 'Petya'
+       console.log(this.name)
+       setTimeout(() => {
+         this.name = 'Golum'
+         console.log(this.name)
+       }, 0)
+    }
+    if (trig) {
+      name3();
+    }
+    this.name = 'Serhey'
+    console.log(this.name)
+  }
 
 
   ngOnInit(): void {
+
+    setTimeout(() => {
+      console.log(this.name)
+    }, 1)
+
+  this.name1();
+  this.name2(true)
+
+    const nameArray: string[] = ['Коля', 'Петя','Вася'];
+    let foundName = null;
+
+    nameArray.forEach(name => {
+      if (name === 'Коля') {
+        foundName = name
+      }
+
+    })
+    console.log(foundName)
+
+     foundName = nameArray.find(name => name === 'Петя')
+    console.log(foundName)
+
+    const tmpArray = nameArray.filter(name => name !== 'Вася')
+    console.log(tmpArray)
+
   }
 }
