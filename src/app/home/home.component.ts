@@ -385,23 +385,30 @@ const objAge: {[key: string]: number} = {
   'dima':  27,
 }
 
-const arrayPeoples: {name: string, age: number, surname: string}[] =
-  Object.entries(objNames).map(([key, value]) => ({name: key, surname: value, age: objAge[key]}))
+    const objColor: {[key: string]: string} = {
+      'red':  'vasya',
+      'green':  'petya',
+      'blue':  'dima',
+    }
 
-const tmpArray = []
-    tmpArray.push(Object.assign({}, objAge))
-    tmpArray.push(objAge)
-    tmpArray.push(objAge)
+    const findColor = (key: string) => {
+  return Object.entries(objColor).find(([, value1]) => value1 === key)?.[0] || ''
+    }
+
+    const getObj = (key: string, value: string) => ({name: key, surname: value, age: objAge[key], color: findColor(key)})
+
+const arrayPeoples: {name: string, age: number, surname: string, color: string}[] =
+  Object.entries(objNames).map(([key, value]) => getObj(key, value))
+
+// const tmpArray = []
+//     tmpArray.push(Object.assign({}, objAge))
+//     tmpArray.push(objAge)
+//     tmpArray.push(objAge)
+//
+//     console.log(tmpArray)
+//     objAge['vasya'] = 58
+
     console.log(arrayPeoples)
-    console.log(tmpArray)
-    objAge['vasya'] = 58
-
-
-
-
-
-
-
 
 
 
