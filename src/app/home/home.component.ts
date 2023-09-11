@@ -294,22 +294,32 @@ export class HomeComponent implements OnInit {
     //   }
     // }, 1000);
 
+
+
+
+
+
+
+
+
+
+
+    //
     // const name: string[] = ['a', 'b', 'c', 'd', 'e']
     //
     // const array1: {key: string}[] = name.map((el) => ({key: el}))
     // console.log(array1)
-
+    //
     // const numbers = [10, 3, 5, 15, 33, 45]
-
+    //
     // const name2: string[] = array1.map((el) => el.key)
     // console.log(name2)
-
+    //
     // const name3 = name2.concat(numbers.map(el => el.toString()))
     // console.log(name3)
     // const item = numbers.join().split(',')
     // console.log(item)
     // console.log(numbers.length)
-
 
     // const obj = {
     // i: 46,
@@ -348,10 +358,10 @@ export class HomeComponent implements OnInit {
     // console.log(total)
 
     // const array3: number[][] = [[1, 2, 3, 4], [1,2], [1, 2, 3, 4, 5], [1, 2, 3]]
-
+    //
     // const array4: number[][] = array3.filter((value) => value.length > 3)
     // console.log(array4)
-
+    //
     // const array9 = [1, 6, 38, 42, 5, 63, 7]
     // const obj5: {[key: string]: number} = {}
     // let total: number = 0;
@@ -373,42 +383,48 @@ export class HomeComponent implements OnInit {
     // console.log(obj01)
     // console.log(obj02)
 
-const objNames: {[key: string]: string} = {
-  'vasya':  'pupkin',
-  'petya':  'kosich',
-  'dima':  'lenin',
-}
+// const objNames: {[key: string]: string} = {
+//   'vasya':  'pupkin',
+//   'petya':  'kosich',
+//   'dima':  'lenin',
+// }
+//
+// const objAge: {[key: string]: number} = {
+//   'vasya':  46,
+//   'petya':  17,
+//   'dima':  27,
+// }
+//
+//     const objColor: {[key: string]: string} = {
+//       'red':  'vasya',
+//       'green':  'petya',
+//       'blue':  'dima',
+//     }
 
-const objAge: {[key: string]: number} = {
-  'vasya':  46,
-  'petya':  17,
-  'dima':  27,
-}
+    // const findColor = (key: string) => {
+    // return Object.entries(objColor).find(([, value1]) => value1 === key)?.[0] || ''
+    // }
+    //
+    // const getObj = (key: string, value: string) => ({name: key, surname: value, age: objAge[key], color: findColor(key)})
+    //
+    // const arrayPeoples: {name: string, age: number, surname: string, color: string}[] =
+    // Object.entries(objNames).map(([key, value]) => getObj(key, value))
 
-    const objColor: {[key: string]: string} = {
-      'red':  'vasya',
-      'green':  'petya',
-      'blue':  'dima',
-    }
-
-    const findColor = (key: string) => {
-  return Object.entries(objColor).find(([, value1]) => value1 === key)?.[0] || ''
-    }
-
-    const getObj = (key: string, value: string) => ({name: key, surname: value, age: objAge[key], color: findColor(key)})
-
-const arrayPeoples: {name: string, age: number, surname: string, color: string}[] =
-  Object.entries(objNames).map(([key, value]) => getObj(key, value))
 
 // const tmpArray = []
 //     tmpArray.push(Object.assign({}, objAge))
-//     tmpArray.push(objAge)
-//     tmpArray.push(objAge)
-//
-//     console.log(tmpArray)
-//     objAge['vasya'] = 58
+    // tmpArray.push(objAge)
+    // tmpArray.push(objAge)
+    // const tmpArray = Object.assign([],{}, objAge)
+    //
+    // console.log(tmpArray)
+    // objAge['vasya'] = 58
 
-    console.log(arrayPeoples)
+    // console.log(arrayPeoples)
+
+
+
+
 
 
 
