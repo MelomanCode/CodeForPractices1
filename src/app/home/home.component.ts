@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 
+
 @Component({
   selector: 'home-root', templateUrl: './home.component.html', styleUrls: ['./home.component.css']
 })
@@ -357,32 +358,49 @@ export class HomeComponent implements OnInit {
     // const total: number = numbers.reduce((previousValue, currentValue) => previousValue + currentValue)
     // console.log(total)
 
-    // const array3: number[][] = [[1, 2, 3, 4], [1,2], [1, 2, 3, 4, 5], [1, 2, 3]]
-    //
-    // const array4: number[][] = array3.filter((value) => value.length > 3)
-    // console.log(array4)
-    //
-    // const array9 = [1, 6, 38, 42, 5, 63, 7]
-    // const obj5: {[key: string]: number} = {}
-    // let total: number = 0;
-    //
-    // array9.forEach((el, index) => {
-    //   obj5[index.toString()] = el
-    //   total += el
-    //   if (index === array9.length - 1) {
-    //     obj5['total'] = total
-    //   }
-    // })
-    // console.log(obj5)
-    //
-    // const obj0 = Object.values(obj5).slice(0, -1)
-    // const obj01 = Object.keys(obj5)
-    // const obj02 = Object.entries(obj5).filter(([key, value]) => key !== 'total' )
-    //   .map(([key, value]) => value)
-    // console.log(obj0)
-    // console.log(obj01)
-    // console.log(obj02)
-
+//     const array3: number[][] = [[1, 2, 3, 4], [1,2], [1, 2, 3, 4, 5], [1, 2, 3]]
+//
+//     const array4: number[][] = array3.filter((value) => value.length > 3)
+//     console.log(array4)
+//
+//
+//     const array9 = [1, 6, 38, 42, 5, 63, 7]
+//     const obj5: {[key: string]: number} = {}
+//     let total: number = 0;
+//
+//     const array9ArrayV1 = String(array9).split(',')
+//     const array9ArrayV2 = array9.sort((a, b) => a - b).join().split(',')
+//     console.log(array9ArrayV1)
+//     console.log(array9ArrayV2)
+//
+//       const num = array9ArrayV1.join('')
+//       const numArray = Number(num)
+//       const ara = Array.of(numArray)
+//       console.log(ara)
+//       console.log(numArray)
+//
+//       const sumArray = array9.reduce((previousValue, currentValue) => previousValue + currentValue)
+//       console.log(sumArray)
+//
+//
+//     array9.forEach((el, index) => {
+//       obj5[index.toString()] = el
+//       total += el
+//       if (index === array9.length - 1) {
+//         obj5['total'] = total
+//       }
+//     })
+//     console.log(obj5)
+//
+//
+//     const obj0 = Object.values(obj5).slice(0, -1)
+//     const obj01 = Object.keys(obj5)
+//     const obj02 = Object.entries(obj5).filter(([key, value]) => key !== 'total' )
+//       .map(([key, value]) => value)
+//     console.log(obj0)
+//     console.log(obj01)
+//     console.log(obj02)
+//
 // const objNames: {[key: string]: string} = {
 //   'vasya':  'pupkin',
 //   'petya':  'kosich',
@@ -400,15 +418,25 @@ export class HomeComponent implements OnInit {
 //       'green':  'petya',
 //       'blue':  'dima',
 //     }
-
-    // const findColor = (key: string) => {
-    // return Object.entries(objColor).find(([, value1]) => value1 === key)?.[0] || ''
-    // }
-    //
-    // const getObj = (key: string, value: string) => ({name: key, surname: value, age: objAge[key], color: findColor(key)})
-    //
-    // const arrayPeoples: {name: string, age: number, surname: string, color: string}[] =
-    // Object.entries(objNames).map(([key, value]) => getObj(key, value))
+//
+//
+//     const sasha = Object.create(objNames)
+//     sasha.name = 'sasha'
+//     sasha.surname = 'falei'
+//     sasha.age = 27
+//
+//       console.log(sasha)
+//
+//
+//
+//     const findColor = (key: string) => {
+//     return Object.entries(objColor).find(([, value1]) => value1 === key)?.[0] || ''
+//     }
+//
+//     const getObj = (key: string, value: string) => ({name: key, surname: value, age: objAge[key], color: findColor(key)})
+//
+//     const arrayPeoples: {name: string, age: number, surname: string, color: string}[] =
+//     Object.entries(objNames).map(([key, value]) => getObj(key, value))
 
 
 // const tmpArray = []
@@ -422,11 +450,68 @@ export class HomeComponent implements OnInit {
 
     // console.log(arrayPeoples)
 
+      //
+      //mission 1
+      // const user = {
+      //     name: 'dima',
+      //     surname: 'kezik',
+      //     patronymic: 'Sergeevich'
+      // }
+      // //V1
+      // console.log(user.name + ' ' + user.surname + ' ' + user.patronymic)
+      // //V2
+      // const user2 = Object.values(user).join(' ')
+      // console.log(user2)
+      // //mission 2
+      // const date = {
+      // years: 2023,
+      //     month: 9,
+      //     day: 12
+      // }
+      // //V1
+      // console.log(date.years + '-' + date.month + '-' + date.day)
+      // //V2
+      // const date2 = Object.values(date).join('-')
+      // console.log(date2)
+      // //mission 3
+      // let obj = {x: 1, y: 2, z: 3};
+      // const obj2 = Object.values(obj).map(value => value * value)
+      // console.log(obj2)
+      // //mission 4
+      // let obj4 = {52: 'b', 1: 'a', 43: 'c'};
+      // console.log(obj4[1]);
+      // console.log(obj4[52]);
+      // console.log(obj4[43]);
+      // //mission 5
+      // let obj6 = {x: 1, y: 2, z: 3};
+      // const keysArray = Object.keys(obj6)
+      // console.log(keysArray)
+      // //mission 6
+      // let key = 'key'
+      // let obj10 = {
+      //     [key + '1']: 1,
+      //     [key + '2']: 2,
+      //     [key + '3']: 3
+      // };
+      // console.log(obj10)
+      //mission 7
 
-
-
-
-
+      const obj11 = {
+          array1: [1, 5, 6, 9],
+          array2: [false , true , true , false],
+          array3: [{name: ' vasya'}, {name: 'petya'}, {name: 'kolya'}, {name: 'dima'}]
+      }
+      const resultArray: {name:string , count: number, isValue: boolean, merge: string}[] = obj11.array1
+          .map((value, index ) => {
+              return {
+                  count: value,
+                  isValue: obj11.array2[index],
+                  name: obj11.array3[index].name,
+                  merge: `${obj11.array3[index].name}
+                  _${obj11.array2[index] ? 'enable' : 'disable'}_${value}`
+              }
+      })
+      console.log(resultArray)
 
 
 
