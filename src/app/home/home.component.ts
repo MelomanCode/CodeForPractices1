@@ -295,16 +295,6 @@ export class HomeComponent implements OnInit {
     //   }
     // }, 1000);
 
-
-
-
-
-
-
-
-
-
-
     //
     // const name: string[] = ['a', 'b', 'c', 'd', 'e']
     //
@@ -391,8 +381,7 @@ export class HomeComponent implements OnInit {
 //       }
 //     })
 //     console.log(obj5)
-//
-//
+
 //     const obj0 = Object.values(obj5).slice(0, -1)
 //     const obj01 = Object.keys(obj5)
 //     const obj02 = Object.entries(obj5).filter(([key, value]) => key !== 'total' )
@@ -418,17 +407,13 @@ export class HomeComponent implements OnInit {
 //       'green':  'petya',
 //       'blue':  'dima',
 //     }
-//
-//
 //     const sasha = Object.create(objNames)
 //     sasha.name = 'sasha'
 //     sasha.surname = 'falei'
 //     sasha.age = 27
 //
 //       console.log(sasha)
-//
-//
-//
+
 //     const findColor = (key: string) => {
 //     return Object.entries(objColor).find(([, value1]) => value1 === key)?.[0] || ''
 //     }
@@ -462,6 +447,9 @@ export class HomeComponent implements OnInit {
       // //V2
       // const user2 = Object.values(user).join(' ')
       // console.log(user2)
+      // //V3
+      // const user3 = `${user.name} ${user.surname} ${user.patronymic}`
+      // console.log(user3)
       // //mission 2
       // const date = {
       // years: 2023,
@@ -496,26 +484,130 @@ export class HomeComponent implements OnInit {
       // console.log(obj10)
       //mission 7
 
-      const obj11 = {
-          array1: [1, 5, 6, 9],
-          array2: [false , true , true , false],
-          array3: [{name: ' vasya'}, {name: 'petya'}, {name: 'kolya'}, {name: 'dima'}]
+      // const obj11 = {
+      //     array1: [1, 5, 6, 9],
+      //     array2: [false , true , true , false],
+      //     array3: [{name: ' vasya'}, {name: 'petya'}, {name: 'kolya'}, {name: 'dima'}]
+      // }
+      // const resultArray: {name:string , count: number, isValue: boolean, merge: string}[] = obj11.array1
+      //     .map((value, index ) => {
+      //         return {
+      //             count: value,
+      //             isValue: obj11.array2[index],
+      //             name: obj11.array3[index].name,
+      //             merge: `${obj11.array3[index].name}_${obj11.array2[index] ? 'enable' : 'disable'}_${value}`
+      //         }
+      // })
+      // console.log(resultArray)
+
+      const obj1 = {
+        name: 'a',
+          age: 1,
+      obj: {name: 'b', age: 2, obj: {name: 'c', age: 3, obj: {name: 'd', age: 4, obj: {name: 'e', age: 5}}} },
+          obj2: {name: 'b', age: 2, obj: {name: 'c', age: 3, obj: {name: 'd', age: 4, obj: {name: 'e', age: 5}}} },
+          obj4: {obj: { obj: {obj: {}}} }
       }
-      const resultArray: {name:string , count: number, isValue: boolean, merge: string}[] = obj11.array1
-          .map((value, index ) => {
-              return {
-                  count: value,
-                  isValue: obj11.array2[index],
-                  name: obj11.array3[index].name,
-                  merge: `${obj11.array3[index].name}
-                  _${obj11.array2[index] ? 'enable' : 'disable'}_${value}`
+
+      const array1: {name: string, age: number}[] = []
+      const parse = (obj: any) => {
+        if (obj['name'] && obj['age']){
+            array1.push({name: obj['name'] || '', age: obj['age'] || 0})
+        }
+        Object.values(obj).forEach((value) => {
+          if (value instanceof Object ) {
+              parse(value)
+          }
+        })
+
+      }
+      parse(obj1)
+      console.log(array1)
+
+
+
+      const obj10 = {
+        arr: [1, 3, 7, 15, 40],
+          obj1: {
+          arr1: [5, 7, 99, 14, 41],
+              obj1: {
+                  arr1: [6, 33, 21, 19, 42],
+                  obj1: {
+                      arr1: [5, 2, 65, 14, 43],
+                      obj1: {
+                          arr1: [5, 97, 99, 14, 44]
+                      }
+                  }
               }
+          },
+          obj2: {
+              arr1: [5, 7, 99, 14, 45],
+              obj1: {
+                  arr1: [6, 33, 34, 19, 46],
+                  obj1: {
+                      arr1: [5, 7, 55, 14, 47],
+                      obj1: {
+                          arr1: [5, 7, 99, 14, 48]
+                      }
+                  }
+              }
+          }
+      }
+
+      let arrayNum: number[] = []
+
+      const parseNum = (obj: any) => {
+        Object.values(obj).forEach(value => {
+          if (Array.isArray(value)) {
+            arrayNum = arrayNum.concat(value)
+          } else if (value instanceof Object) {
+            parseNum(value)
+          }
+        })
+      }
+      parseNum(obj10)
+      arrayNum = [...new Set(arrayNum)]
+      let total: number = 0
+      arrayNum.forEach(value => {
+        total += value
       })
-      console.log(resultArray)
+      arrayNum.push(total)
+      console.log(arrayNum)
+
+      const objTree: {obj1: {}, obj2: {}} = {obj1: {obj1: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {},obj2: {}}},obj2: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {},obj2: {obj1: {},obj2: {obj1: {},obj2: {}}}}}},obj2: {obj1: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {obj1: {},obj2: {}},obj2: {}}},obj2: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {obj1: {obj1: {},obj2: {}},obj2: {}},obj2: {}}}}}
+
+      const objTree2: {obj1: {}, obj2: {}} = {obj1: {obj1: {}, obj2: {obj1: {obj1: {}, obj2: {}}, obj2: {}}}, obj2: {}}
+
+      let maxDeep = 0
+      let minDeep = 0
+      let numArray: number[] = []
+
+      const parseTree = (obj: {obj1: {}, obj2: {}} , deep: number) => {
+        if (!Object.keys(obj).length) {
+          numArray.push(deep)
+            return
+        }
+        if (obj.obj1) {
+          parseTree(obj.obj1 as {obj1: {}, obj2: {}}, deep + 1)
+        }
+        if (obj.obj2) {
+            parseTree(obj.obj2 as {obj1: {}, obj2: {}}, deep + 1)
+        }
+      }
+      parseTree(objTree, 0)
+      numArray = numArray.sort()
+      minDeep = numArray[0]
+      maxDeep = numArray[numArray.length - 1]
 
 
 
 
+
+
+
+
+
+
+      console.log(`maxDeep: ${maxDeep} minDeep: ${minDeep}`)
 
 
 
@@ -539,7 +631,5 @@ export class HomeComponent implements OnInit {
 
 
   }
-
-
 }
 
