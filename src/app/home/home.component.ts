@@ -6,48 +6,12 @@ import {Component, OnInit} from '@angular/core';
   selector: 'home-root', templateUrl: './home.component.html', styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  //Типы данных
-  // tmp1:string[] = ['bob' , 'vladimir', 'dima']
-  // tmp2: number[] = [0 , 1 , 2 , 3 , 4]
-  // tmp3: boolean[] = [true]
-  // //Инициализация массивов
-  // colors: string[] = ['red', 'green', 'blue'];
-  // colors1: string[] = Array.of('red', 'green', 'blue');
-  // // Array.from - разделение строки на несколько элементов
-  // array:string[] = Array.from('hello World');
-  // // Array.from() в которой this.tmp2 является массивом чисел , а второй функцией квадрата чисел для каждого элемента
-  // array1:number[] = Array.from(this.tmp2, n => n * n);
-  // // Array.from() с испольщованием длины
-  // array3 = Array.from({length:3}, (element, index) => {
-  //   return index;
-  // })
-  // array4 = Array.from({length:3, "0": "Tom", "1": "Sam", "2": "Bob"}, (element) => {
-  //   return element;
-  // });
-  // //spread-оператор благодаря опеератору(...@@@@) мы можен наполнить массив значениями из другого массива
-  // user: string[] = Array.of(...this.tmp1);
-  // // так же можно передавать значение из нескольких массивов
-  // value = [...this.tmp1, 'Alex', ...this.tmp2]
+
 
 
 
   ngOnInit(): void {
-    // console.log(this.colors[0]) // Выводит определенное значение из массива по индексу
-      // Первый и второй вариавнт равназначны , поэтому нет смысла писать Array.of()
-    // console.log(this.colors) // 1
-    // console.log(this.colors1) // 2
 
-    //Array.from()
-    // console.log(this.array)
-    // console.log(this.array1)
-    // console.log(this.array3)
-    // console.log(this.array4)
-
-    //spread-оператор
-    // console.log(...this.tmp1)
-    // console.log(this.user)
-    // console.log(this.value)
-    //
     // const people: string[]= ["Tom", "Bob", "Sam"];
     // const [first, second, third] = people;
     // console.log(first)
@@ -67,8 +31,8 @@ export class HomeComponent implements OnInit {
     //
     // const people = [{name:"Sam"}, {name:"Tom"}, {name:"Bob"}];
     // const employees = [...people];
-    // employees[0] = {name: "Dan"}; // Правильно,в данном случае первый элемент 2-го массива заменяется на ссылку на новый объект
-    // // employees[0].name = "Dan"; //  Не правильно т.к обект ссылка и в этом случае 1 значение меняется для 2 массивов
+    // employees[0] = {name: "Dan"}; // Правильно
+    // // employees[0].name = "Dan"; //  Не правильно
     // console.log(employees);
     // console.log(people);
 
@@ -78,42 +42,34 @@ export class HomeComponent implements OnInit {
     // people[1] = 'toma';
     // console.log(users)
     // console.log(people)
-    //Копирование по индексам, P.s Второе значение индекса  говорит -  до его значения не включая его
     // const users = ["Tom", "Sam", "Bill", "Alice", "Kate"];
     // const people = users.slice(1, 4);
     // console.log(people);
 
-    //Метод push() добавляет элемент в конец массива
     // const people = [];
     // people.push('Tom');
     // people.push('Sam');
     // people.push('Bob','Mike');
     // console.log(people);
 
-    //Метод pop() удаляет последний элемент из массива
     // const people = ["Tom", "Sam", "Bob", "Mike"];
     // const lastPerson = people.pop();
     // console.log(lastPerson );
     // console.log(people);
 
-    //Метод shift() извлекает и удаляет первый элемент из массива
     // const people = ["Tom", "Sam", "Bob", "Mike"];
     // const firstPerson = people.shift();
     // console.log(firstPerson);
     // console.log(people);
 
-    //Метод unshift() добавляет новый элемент в начало массива
     // const people = ["Tom", "Sam", "Bob"];
     // people.unshift("Alice");
     // console.log(people);
 
-    //Метод sort() сортирует массив по возрастанию( для типа string по алфавитному порядку,
-    // а для number нужно прописывать функцию для правильного отоброжения
     // const number = [2, 61, 17, 290, 33]
     // number.sort((a,b) => a-b)
     // console.log(number)
 
-    //Методы indexOf() и lastIndexOf() возвращают индекс первого и последнего включения элемента в массиве
     // const people = ["Tom", "Sam", "Bob", "Tom", "Alice", "Sam"];
     // const firstIndex = people.indexOf("Tom");
     // const lastIndex = people.lastIndexOf("Sam");
@@ -122,7 +78,6 @@ export class HomeComponent implements OnInit {
     // console.log(lastIndex);
     // console.log(otherIndex);
 
-    //Метод splice() удаляет элементы с определенного индекса. Например, удаление элементов с третьего индекса
 //     const people = ["Tom", "Sam", "Bill", "Alice", "Kate"];
 //     const deleted = people.splice(3);
 //     console.log(deleted);       // [ "Alice", "Kate" ]
@@ -143,13 +98,11 @@ export class HomeComponent implements OnInit {
 //     console.log(deleted3);       // ["Sam", "Bill", "Alice"]
 //     console.log(people3);         // ["Tom", "Ann", "Bob", "Kate"]
 //
-    //Метод concat() служит для объединения массивов. В качестве результата он возвращает объединенный массив
     // const men = ["Tom", "Sam", "Bob"];
     // const women = ["Alice", "Kate"];
     // const people = men.concat(women);
     // console.log(people);
 
-    //Метод includes() проверяет, есть ли в массиве значение
     // const people1 = ["Tom", "Sam", "Bob", "Tom", "Alice", "Sam"];
     // console.log(people1.includes("Tom"));    // true - Tom есть в массиве
     // console.log(people1.includes("Kate"))    // false - Kate нет в массиве
@@ -162,38 +115,30 @@ export class HomeComponent implements OnInit {
     // console.log(people3.includes("Tom", -2)); // false - 2-й индекс с конца
     // console.log(people3.includes("Tom", -3)) // true - 3-й индекс с конца
 
-    //Метод every() проверяет, все ли элементы соответствуют определенному условию
     // const number = [1, 2, -2, -1 , 5]
     // const passed = number.every(n => n > 0)
     // console.log(passed)
 
-    //Метод some() тоже самое что и every() только проверяет наличие хотябы 1 соответствие определенному условию
     // const number = [1, 2, -2, -1 , 5]
     // const passed = number.some(n => n > 0)
     // console.log(passed)
 
-    //Методы forEach() и map() осуществляют перебор элементов и выполняют с ними определенный операции.
-    // Например, используем метод метода forEach() для вычисления квадратов чисел в массиве
     // const numbers = [ 1, 2, 3, 4, 5, 6];
     // numbers.forEach(n =>
     //   console.log("Квадрат числа", n, "равен", n * n )
     // );
 
-    //map() :
     // const numbers = [ 1, 2, 3, 4, 5, 6];
     // const squares = numbers.map(n => n * n);
     // console.log(squares);
 
-    //Метод flat() упрощает массив с учетом указанной вложенности элементов
     // const people = ["Tom", "Bob", ["Alice", "Kate", ["Sam", "Ann"]]];
     // const flattenPeople = people.flat();
     // console.log(flattenPeople); // ["Tom", "Bob", "Alice", "Kate", ["Sam", "Ann"]]
     //
     // const flattenPeople = people.flat(2);
     // console.log(flattenPeople); // ["Tom", "Bob", "Alice", "Kate", "Sam", "Ann"]
-
     //
-
     // const num1 = '1234567890';
     // const num2 = 'SamDimaLoreenLeraDominik'
     // const value1 = num1.split('')
@@ -202,20 +147,15 @@ export class HomeComponent implements OnInit {
     // console.log(num2)
     // console.log(value1)
     // console.log(value2)
-
     //
-
     // const date = '2025-12-31';
     // const date1 = '2025.12.31';
     // const res = date.split('-').reverse().join('.');
     // const res1 = date1.split('.').reverse().join('-');
     // console.log(res);
     // console.log(res1);
-
-// Метод at()
     // const res = ['a', 'b', 'c'].at(-1);
     // console.log(res)
-
     //
 //     const rule: {[key: string]: string} = {
 //       ')': '(',
@@ -235,12 +175,11 @@ export class HomeComponent implements OnInit {
 //             return
 //           }
 //         }
-//
 //       }
 //     }
 // validate()
 
-    // forEach() Сумма элементов sum += elem; нужно запомнить
+    // forEach() (Сумма элементов sum += elem; нужно запомнить)
     // let arr = [1, 2, 3, 4, 5];
     // let sum = 0;
     // arr.forEach(function(elem) {
@@ -248,8 +187,6 @@ export class HomeComponent implements OnInit {
     // });
     // console.log(sum);
 
-//
-    //Метод reduce()
     // let arr = [1, 2, 3, 4, 5, 6];
     // let res = arr.reduce(function(sum, elem) {
     //   return sum + elem;
@@ -266,25 +203,22 @@ export class HomeComponent implements OnInit {
     // });
     // console.log(res);
 
-    // Метод fill()
     // let res = ['a', 'b', 'c'].fill('!', 1);
     // console.log(res);
 
-    //Объект Date
     // let date = new Date();
-    // console.log(date.getSeconds());  // секунды
-    // console.log(date.getMinutes());  // минуты
-    // console.log(date.getHours());    // часы
-    // console.log(date.getDate());     // дни
-    // console.log(date.getMonth());    // месяцы с нуля
-    // console.log(date.getFullYear()); // год
-    // console.log(date.getDay());      // текущий день недели
+    // console.log(date.getSeconds());
+    // console.log(date.getMinutes());
+    // console.log(date.getHours());
+    // console.log(date.getDate());
+    // console.log(date.getMonth());
+    // console.log(date.getFullYear());
+    // console.log(date.getDay());
     //
     // let date = new Date();
     // let str  = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate();
     // console.log(str);
 
-    //SetInterval()
     // let i = 0;
     // let id = setInterval(function() {
     //   i++;
@@ -294,7 +228,6 @@ export class HomeComponent implements OnInit {
     //     console.log(i);
     //   }
     // }, 1000);
-
     //
     // const name: string[] = ['a', 'b', 'c', 'd', 'e']
     //
