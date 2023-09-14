@@ -514,7 +514,7 @@ export class HomeComponent implements OnInit {
             array1.push({name: obj['name'] || '', age: obj['age'] || 0})
         }
         Object.values(obj).forEach((value) => {
-          if (value instanceof Object ) {
+          if (value instanceof Object) {
               parse(value)
           }
         })
@@ -575,10 +575,10 @@ export class HomeComponent implements OnInit {
 
       const objTree: {obj1: {}, obj2: {}} = {obj1: {obj1: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {},obj2: {}}},obj2: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {},obj2: {obj1: {},obj2: {obj1: {},obj2: {}}}}}},obj2: {obj1: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {obj1: {},obj2: {}},obj2: {}}},obj2: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {obj1: {obj1: {},obj2: {}},obj2: {}},obj2: {}}}}}
 
-      const objTree2: {obj1: {}, obj2: {}} = {obj1: {obj1: {}, obj2: {obj1: {obj1: {}, obj2: {}}, obj2: {}}}, obj2: {}}
+      // const objTree2: {obj1: {}, obj2: {}} = {obj1: {obj1: {}, obj2: {obj1: {obj1: {}, obj2: {}}, obj2: {}}}, obj2: {}}
 
-      let maxDeep = 0
-      let minDeep = 0
+      let maxDeep: number
+      let minDeep :number
       let numArray: number[] = []
 
       const parseTree = (obj: {obj1: {}, obj2: {}} , deep: number) => {
@@ -597,16 +597,6 @@ export class HomeComponent implements OnInit {
       numArray = numArray.sort()
       minDeep = numArray[0]
       maxDeep = numArray[numArray.length - 1]
-
-
-
-
-
-
-
-
-
-
       console.log(`maxDeep: ${maxDeep} minDeep: ${minDeep}`)
 
 
