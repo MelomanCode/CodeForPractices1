@@ -527,7 +527,7 @@ export class HomeComponent implements OnInit {
         }
       }
       parseTree(objTree, 0)
-      numArray = numArray.sort()
+      numArray = numArray.sort((a, b) => a - b)
       minDeep = numArray[0]
       maxDeep = numArray[numArray.length - 1]
       console.log(`maxDeep: ${maxDeep} minDeep: ${minDeep}`)
