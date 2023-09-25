@@ -11,6 +11,9 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // const name = 'Dima'
+    // let fullName = name + '\n' + 'Kezik'
+    // console.log(fullName)
 
     // const people: string[]= ["Tom", "Bob", "Sam"];
     // const [first, second, third] = people;
@@ -433,105 +436,136 @@ export class HomeComponent implements OnInit {
       // })
       // console.log(resultArray)
 
-      const obj1 = {
-        name: 'a',
-          age: 1,
-      obj: {name: 'b', age: 2, obj: {name: 'c', age: 3, obj: {name: 'd', age: 4, obj: {name: 'e', age: 5}}} },
-          obj2: {name: 'b', age: 2, obj: {name: 'c', age: 3, obj: {name: 'd', age: 4, obj: {name: 'e', age: 5}}} },
-          obj4: {obj: { obj: {obj: {}}} }
-      }
+      // const obj1 = {
+      //   name: 'a',
+      //     age: 1,
+      // obj: {name: 'b', age: 2, obj: {name: 'c', age: 3, obj: {name: 'd', age: 4, obj: {name: 'e', age: 5}}} },
+      //     obj2: {name: 'b', age: 2, obj: {name: 'c', age: 3, obj: {name: 'd', age: 4, obj: {name: 'e', age: 5}}} },
+      //     obj4: {obj: { obj: {obj: {}}} }
+      // }
+      //
+      // const array1: {name: string, age: number}[] = []
+      // const parse = (obj: any) => {
+      //   if (obj['name'] && obj['age']){
+      //       array1.push({name: obj['name'] || '', age: obj['age'] || 0})
+      //   }
+      //   Object.values(obj).forEach((value) => {
+      //     if (value instanceof Object) {
+      //         parse(value)
+      //     }
+      //   })
+      //
+      // }
+      // parse(obj1)
+      // console.log(array1)
+      //
+      //
+      //
+      // const obj10 = {
+      //   arr: [1, 3, 7, 15, 40],
+      //     obj1: {
+      //     arr1: [5, 7, 99, 14, 41],
+      //         obj1: {
+      //             arr1: [6, 33, 21, 19, 42],
+      //             obj1: {
+      //                 arr1: [5, 2, 65, 14, 43],
+      //                 obj1: {
+      //                     arr1: [5, 97, 99, 14, 44]
+      //                 }
+      //             }
+      //         }
+      //     },
+      //     obj2: {
+      //         arr1: [5, 7, 99, 14, 45],
+      //         obj1: {
+      //             arr1: [6, 33, 34, 19, 46],
+      //             obj1: {
+      //                 arr1: [5, 7, 55, 14, 47],
+      //                 obj1: {
+      //                     arr1: [5, 7, 99, 14, 48]
+      //                 }
+      //             }
+      //         }
+      //     }
+      // }
+      //
+      // let arrayNum: number[] = []
+      //
+      // const parseNum = (obj: any) => {
+      //   Object.values(obj).forEach(value => {
+      //     if (Array.isArray(value)) {
+      //       arrayNum = arrayNum.concat(value)
+      //     } else if (value instanceof Object) {
+      //       parseNum(value)
+      //     }
+      //   })
+      // }
+      // parseNum(obj10)
+      // arrayNum = [...new Set(arrayNum)]
+      // let total: number = 0
+      // arrayNum.forEach(value => {
+      //   total += value
+      // })
+      // arrayNum.push(total)
+      // console.log(arrayNum)
+      //
+      // const objTree: {obj1: {}, obj2: {}} = {obj1: {obj1: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {},obj2: {}}},obj2: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {},obj2: {obj1: {},obj2: {obj1: {},obj2: {}}}}}},obj2: {obj1: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {obj1: {},obj2: {}},obj2: {}}},obj2: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {obj1: {obj1: {},obj2: {}},obj2: {}},obj2: {}}}}}
+      //
+      // // const objTree2: {obj1: {}, obj2: {}} = {obj1: {obj1: {}, obj2: {obj1: {obj1: {}, obj2: {}}, obj2: {}}}, obj2: {}}
+      //
+      // let maxDeep: number
+      // let minDeep :number
+      // let numArray: number[] = []
+      //
+      // const parseTree = (obj: {obj1: {}, obj2: {}} , deep: number) => {
+      //   if (!Object.keys(obj).length) {
+      //     numArray.push(deep)
+      //       return
+      //   }
+      //   if (obj.obj1) {
+      //     parseTree(obj.obj1 as {obj1: {}, obj2: {}}, deep + 1)
+      //   }
+      //   if (obj.obj2) {
+      //       parseTree(obj.obj2 as {obj1: {}, obj2: {}}, deep + 1)
+      //   }
+      // }
+      // parseTree(objTree, 0)
+      // minDeep = numArray[0]
+      // maxDeep = numArray[numArray.length - 1]
+      // console.log(numArray)
+      // console.log(`maxDeep: ${maxDeep} minDeep: ${minDeep}`)
 
-      const array1: {name: string, age: number}[] = []
-      const parse = (obj: any) => {
-        if (obj['name'] && obj['age']){
-            array1.push({name: obj['name'] || '', age: obj['age'] || 0})
-        }
-        Object.values(obj).forEach((value) => {
-          if (value instanceof Object) {
-              parse(value)
+
+
+    const obj2023 = {
+        arr: ['Dima', 'Slava', 'Vova', 'Koreychik'],
+      obj1: {
+          name: 'Vlad',
+        surname: 'Martel',
+        obj2: { arr: ['Dima', 'Slava', 'vova'], surname: 'Gilbert', obj3: {name: 'loki', surname: 'Asgard'}, obj4: {name: 'Tor', surname: 'Asgard'}}
+      }
+    }
+
+    let strArray: string [] = []
+
+    const strParse = (obj: any) => {
+          if (Array.isArray(obj)) {
+            strArray = strArray.concat(obj)
+          } else if (obj['name'] && obj['surname']) {
+            strArray.push(obj['name'] || '')
+            strArray.push(obj['surname'] || '')
           }
-        })
-
-      }
-      parse(obj1)
-      console.log(array1)
-
-
-
-      const obj10 = {
-        arr: [1, 3, 7, 15, 40],
-          obj1: {
-          arr1: [5, 7, 99, 14, 41],
-              obj1: {
-                  arr1: [6, 33, 21, 19, 42],
-                  obj1: {
-                      arr1: [5, 2, 65, 14, 43],
-                      obj1: {
-                          arr1: [5, 97, 99, 14, 44]
-                      }
-                  }
-              }
-          },
-          obj2: {
-              arr1: [5, 7, 99, 14, 45],
-              obj1: {
-                  arr1: [6, 33, 34, 19, 46],
-                  obj1: {
-                      arr1: [5, 7, 55, 14, 47],
-                      obj1: {
-                          arr1: [5, 7, 99, 14, 48]
-                      }
-                  }
-              }
+          if (obj instanceof Object) {
+            Object.values(obj).forEach(value1 => {
+                strParse(value1)
+            })
           }
-      }
+    }
+    strParse(obj2023)
+    const stringArray = [...new Set(strArray)]
 
-      let arrayNum: number[] = []
-
-      const parseNum = (obj: any) => {
-        Object.values(obj).forEach(value => {
-          if (Array.isArray(value)) {
-            arrayNum = arrayNum.concat(value)
-          } else if (value instanceof Object) {
-            parseNum(value)
-          }
-        })
-      }
-      parseNum(obj10)
-      arrayNum = [...new Set(arrayNum)]
-      let total: number = 0
-      arrayNum.forEach(value => {
-        total += value
-      })
-      arrayNum.push(total)
-      console.log(arrayNum)
-
-      const objTree: {obj1: {}, obj2: {}} = {obj1: {obj1: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {},obj2: {}}},obj2: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {},obj2: {obj1: {},obj2: {obj1: {},obj2: {}}}}}},obj2: {obj1: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {obj1: {},obj2: {}},obj2: {}}},obj2: {obj1: {obj1: {},obj2: {}},obj2: {obj1: {obj1: {obj1: {},obj2: {}},obj2: {}},obj2: {}}}}}
-
-      // const objTree2: {obj1: {}, obj2: {}} = {obj1: {obj1: {}, obj2: {obj1: {obj1: {}, obj2: {}}, obj2: {}}}, obj2: {}}
-
-      let maxDeep: number
-      let minDeep :number
-      let numArray: number[] = []
-
-      const parseTree = (obj: {obj1: {}, obj2: {}} , deep: number) => {
-        if (!Object.keys(obj).length) {
-          numArray.push(deep)
-            return
-        }
-        if (obj.obj1) {
-          parseTree(obj.obj1 as {obj1: {}, obj2: {}}, deep + 1)
-        }
-        if (obj.obj2) {
-            parseTree(obj.obj2 as {obj1: {}, obj2: {}}, deep + 1)
-        }
-      }
-      parseTree(objTree, 0)
-      numArray = numArray.sort((a, b) => a - b)
-      minDeep = numArray[0]
-      maxDeep = numArray[numArray.length - 1]
-      console.log(`maxDeep: ${maxDeep} minDeep: ${minDeep}`)
-
+    console.log(stringArray)
+    console.log(strArray)
 
 
 
